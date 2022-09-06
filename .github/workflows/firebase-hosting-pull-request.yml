@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: npm i && npm run build
-       - name: Unit Test
+      - name: Unit Test
         run: npm test
       - name: Deploy Current App
         uses: FirebaseExtended/action-hosting-deploy@v0
