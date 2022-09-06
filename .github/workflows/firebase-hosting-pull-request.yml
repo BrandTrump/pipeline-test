@@ -10,7 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: npm i && npm run build
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: Unit Test
+        run: npm test
+      - name: Deploy Current App
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_CI_CD_PIPELINE_TEST_C1EE2 }}"
